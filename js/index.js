@@ -74,6 +74,11 @@ ctaH1.append(siteContent["cta"]["h1"]);
 const ctaButton = document.querySelector('.cta button');
 ctaButton.append(siteContent["cta"]["button"]);
 
+ctaButton.addEventListener('click', (e) => {
+    ctaH1.setAttribute("id", "cta-h1");
+    document.getElementById("cta-h1").innerHTML = "DOM MANIPULATION";
+});
+
 const ctaImage = document.querySelector('.cta img');
 ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
