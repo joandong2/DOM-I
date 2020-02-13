@@ -4,6 +4,15 @@ body {
   align-items: center;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}
+
 .digit {
   display: inline-block;
   font-size: 80px;
@@ -11,4 +20,33 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.buttons button {
+    padding: 10px 35px;
+    text-transform: capitalize;
+    color: #fff;
+    border: none;
+    box-shadow: unset;;
+}
+
+#start {
+    background: #1bd27d;
+    border: 1px solid #1bd27d;
+    transition: all .5s;
+}
+#start:hover {
+    background: white;
+    border: 1px solid #1bd27d;
+    color: #1bd27d;
+}
+#reset {
+    background: #d21b1b;
+    border: 1px solid #d21b1b;
+    transition: all .5s;
+}
+#reset:hover {
+    background: white;
+    border: 1px solid #d21b1b;
+    color: #d21b1b;
 }

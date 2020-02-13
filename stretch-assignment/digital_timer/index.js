@@ -38,7 +38,7 @@ startButton.onclick = () => {
         if (secondITR*10 === limit) {
             clearInterval(interval);
             digits.forEach((item) => {
-                item.style.color = 'red';
+                item.style.color = '#d21b1b';
             });
         }
         
