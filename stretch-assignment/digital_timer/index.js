@@ -47,6 +47,5 @@ startButton.onclick = () => {
             secondITR = divisible;
             divisible++;
         }
-        
     }, 1000);
 }
