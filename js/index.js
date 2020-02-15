@@ -40,3 +40,82 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Navigation Keys
+const navKeys = Object.keys(siteContent["nav"]);
+let navLinks = document.querySelectorAll('nav a');
+for(let i=0; i<navKeys.length-1; i++) {
+    for(let j=i; j<i+1; j++) {
+        navLinks[i].classList.add(navKeys[i]);
+        //navLinks[i].classList.add('nav-item');
+        navLinks[i].append(siteContent["nav"][navKeys[i]]);
+    }
+}
+
+// add new element to navigation
+const nav = document.querySelector('nav');
+const link1 = document.createElement('a');
+const link2 = document.createElement('a');
+link1.innerHTML = "Login";   
+nav.appendChild(link1);  
+link2.innerHTML = "Logout"; 
+nav.appendChild(link2);          
+
+const navLinksStyle = document.querySelectorAll('nav a');
+
+navLinksStyle.forEach((item) => {
+    item.style.color = "green";
+});
+
+// CTA
+const ctaH1 = document.querySelector('.cta h1');
+ctaH1.append(siteContent["cta"]["h1"]);
+
+const ctaButton = document.querySelector('.cta button');
+ctaButton.append(siteContent["cta"]["button"]);
+
+ctaButton.addEventListener('click', (e) => {
+    ctaH1.setAttribute("id", "cta-h1");
+    document.getElementById("cta-h1").innerHTML = "DOM MANIPULATION";
+});
+
+const ctaImage = document.querySelector('.cta img');
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// Main Content
+const mainImage = document.querySelector('.main-content img');
+mainImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+const contentKeys = Object.keys(siteContent["main-content"]);
+const textContent = document.querySelectorAll('.main-content .text-content');
+
+textContent[0].querySelector('h4').append(siteContent['main-content'][contentKeys[0]]);
+textContent[0].querySelector('p').append(siteContent['main-content'][contentKeys[1]]);
+
+textContent[1].querySelector('h4').append(siteContent['main-content'][contentKeys[2]]);
+textContent[1].querySelector('p').append(siteContent['main-content'][contentKeys[3]]);
+
+textContent[2].querySelector('h4').append(siteContent['main-content'][contentKeys[5]]);
+textContent[2].querySelector('p').append(siteContent['main-content'][contentKeys[6]]);
+
+textContent[3].querySelector('h4').append(siteContent['main-content'][contentKeys[7]]);
+textContent[3].querySelector('p').append(siteContent['main-content'][contentKeys[8]]);
+
+textContent[4].querySelector('h4').append(siteContent['main-content'][contentKeys[9]]);
+textContent[4].querySelector('p').append(siteContent['main-content'][contentKeys[10]]);
+
+// Contact
+const contactH4 = document.querySelector('.contact h4'); 
+contactH4.append(siteContent["contact"]["contact-h4"]);
+
+const contactKeys = Object.keys(siteContent["contact"]);
+const contactP = document.querySelectorAll('.contact p');
+for(let i=0; i<contactP.length; i++) {
+    for(let j=i+1; j<i+2; j++) {
+        contactP[i].append(siteContent["contact"][contactKeys[j]]);
+    }
+}
+
+// Footer
+const footerP = document.querySelector('footer p');
+footerP.append(siteContent["footer"]["copyright"]);
